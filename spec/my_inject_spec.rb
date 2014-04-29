@@ -3,15 +3,15 @@ require "my_inject"
 describe Array do
  
 	context "No Block" do
-	 it "should returns nil for an empty array" do
+	 xit "should returns nil for an empty array" do
 	   expect([].my_inject).to be_nil
 	 end
 
-	 it "should return a result for a single element array" do
+	 xit "should return a result for a single element array" do
 	   expect([1].my_inject).to eq 1
 	 end
 
-	 it "should return a RuntimeError" do
+	 xit "should return a RuntimeError" do
 	 	x = [1,2,3]
 	 	expect{x.my_inject}.to raise_error(RuntimeError)
 	 end
@@ -77,7 +77,7 @@ describe Array do
 			expect([1,2,3].inject(0){|acc,el| acc*el}).to eq 0
 		end
 
-		it "should should multiply to 0" do
+		it "should should multiply to 120" do
 			expect([2,3,4].inject(5){|acc,el| acc*el}).to eq 120
 		end
 
@@ -85,10 +85,12 @@ describe Array do
 			expect([2,3,4].inject{|acc,el| acc*el}).to eq 24
 		end
 
-		it "should should return  to 24" do
+		it "should should return  to -5" do
 			expect([2,3,4].inject{|acc,el| acc-el}).to eq -5
 		end		
-
+		it "should should return  to -8" do
+			expect([2,3,4].inject(1){|acc,el| acc-el}).to eq -8
+		end	
 
 
 	end
