@@ -1,15 +1,6 @@
 class Array
-	
-	def my_inject(*initial, &block)
-		array = initial + self
-		return nil if array.empty?
-		return array[0] if array.length==1		
-		result = array[0]
-		result = yield(result,array[1..-1].my_inject(&block))
-	end
 
-
-	def my_inject2(*initial)
+	def my_inject(*initial)
 		array = initial + self
 		return nil if array.empty?
 		result = array[0]
